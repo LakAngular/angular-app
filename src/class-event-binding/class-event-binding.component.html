@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row ">
+        Example for Class Binding with Event Binding - Toggle() - click.
+    </div>
+    <div class="row">
+        <button [ngClass]="{'green': isActive, 'red': !isActive}" (click)="isActive = !isActive">Class Binding Click Here</button>
+        <button [ngStyle]="{'background-color': color}" (click)="submitcolor()">Style Binding Click Here</button>
+        <!--   <button [ngStyle]="{'background-color':color}" (click)="submitcolor(isToggled)">Style Binding Click Here</button>-->
+    </div>
+</div>
+
+<button [style.color]="isClicked ? 'red' : 'green'" (click)="isClicked = !isClicked">Style Bindig Using Ternary Operator</button>
+<button [class]="isTrue ? 'red' : 'green'" (click)="isTrue = !isTrue">Class Bindig Using Ternary Operator</button>
