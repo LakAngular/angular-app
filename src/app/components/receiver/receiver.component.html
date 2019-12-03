@@ -1,0 +1,9 @@
+<p>Receiver : Person B </p>
+<input type="text" id="receiverMessage" [(ngModel)]="sendmsgfromBToA">
+<button (click)="receivemsg()">Send</button>
+<table>
+    <tr *ngFor="let mesage of receivemsgfromA">
+        <td></td>
+        <td>{{mesage}}</td>
+    </tr>
+</table>

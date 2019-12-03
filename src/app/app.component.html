@@ -1,18 +1,30 @@
-<p>InterPolation- Attribute Binding - Event Binding</p>
-<app-attribute-structural-directives>
-</app-attribute-structural-directives>
-
-<br/>
-
-<hr/>
-<app-class-event-binding></app-class-event-binding>
-
-<!-- <div class="container">
-    <input type="text" id="name">
-</div>
 <div class="container">
-    <input type="number" id="age">
-</div>
-<div><button>submit</button></div> -->
+    <div class="row">
+        <!-- Rxjs - Observable Example-->
+        <p>Chat Box</p>
+        <div class="container">
+            <div class="row" id="left">
+                <app-sender></app-sender>
+            </div>
+            <div class="row" id="right">
+                <app-receiver></app-receiver>
+            </div>
+        </div>
+    </div>
+    <br><br><br> <br><br> <br><br><br> <br><br> <br><br><br> <br><br>
+    <div class="row">
+        <!-- Parent to Child Data Transfer using @Input -->
+        <p>Data from Child : {{datafchild}}</p>
+        <app-child [titlemsg]="title" (send)="onReceive($event)">
+            <app-sample></app-sample>
+        </app-child>
 
-<hr/>
+    </div>
+
+    <div class="row">
+        <p>InterPolation- Attribute Binding - Event Binding</p>
+        <app-attribute-structural-directives>
+        </app-attribute-structural-directives>
+        <!--<app-class-event-binding></app-class-event-binding> -->
+    </div>
+</div>

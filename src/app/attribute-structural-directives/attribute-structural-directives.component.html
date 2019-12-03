@@ -6,10 +6,8 @@
                     <th>Mobile Name</th>
                     <th>Product Brand</th>
                     <th>Release Date</th>
-                    <th>Quantity</th>
                     <th>Price</th>
-                    <th>Add </th>
-                    <th>Delete</th>
+                    <th>Quantity</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,10 +16,10 @@
                     <td>{{list.mobieName}}</td>
                     <td>{{list.productBrand}}</td>
                     <td>{{list.releaseDate}}</td>
-                    <td>{{list.qty}}</td>
                     <td>{{list.price}}</td>
-                    <td><img src="../assets/images/plus.jpg" width="30" height="30"></td>
-                    <td><button (click)="deletelist(list.userID)" [disabled]="list.qty > 1">Delete</button></td>
+                    <td><button (click)="deletelist(i)">-</button> {{list.qty}}
+                        <button (click)="increaseQty(i)">+</button>
+                    </td>
                 </tr>
             </tbody>
         </table>

@@ -13,6 +13,7 @@ export class AppComponent implements OnChanges, OnInit,
 // DoCheck,
 AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   title = 'angular-app';
+  datafchild = 'test';
   constructor() {
     console.log('Constructor called when component instantiated');
   }
@@ -20,7 +21,11 @@ AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestro
       console.log('ngOnChanges called upone every change detected from view. Its called before ngOnInit initiated');
   }
   ngOnInit() {
-      console.log('ngOnInit called once when initializating the component');
+    setTimeout(() => {
+      this.title = "change title from angular-app";
+    }, 3000);
+
+    console.log('ngOnInit called once when initializating the component');
   }
     /* ngDoCheck() {
       console.log('Called at every change');
@@ -44,6 +49,10 @@ ngOnDestroy() {
   console.log('ngOnDestroy called when component destroyed');
 }
 
+onReceive(e) {
+  console.log('evalue:' + e);
+  this.datafchild = e;
+}
 }
 
 

@@ -1,0 +1,10 @@
+<p>Sender : Person A </p>
+<input type="text" id="senderMessage" [(ngModel)]="sendmsgfromAToB">
+<button (click)="sendmsg()">Send</button>
+<br />
+<table>
+    <tr *ngFor="let message of receivemsgfromB">
+        <td></td>
+        <td>{{message}}</td>
+    </tr>
+</table>

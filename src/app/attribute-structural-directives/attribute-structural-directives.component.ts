@@ -1,3 +1,5 @@
+// list the mobile prod and (+) increase the qty and if qty >5 change the bg color using [ngStyle]
+// decrease the qty (-) and delete the particular record if qty<=1 using splice method
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -43,7 +45,7 @@ mobileProd = [{
   mobieName: 'Samsung galaxy 9',
   productBrand: 'Samsung',
   releaseDate: 'dec 2016',
-  qty: 0,
+  qty:1,
   price: 50000
 },
 {
@@ -51,7 +53,7 @@ mobileProd = [{
   mobieName: 'Samsung Notes',
   productBrand: 'Samsung',
   releaseDate: 'dec 2017',
-  qty: 0,
+  qty: 2,
   price: 70000
 },
 {
@@ -59,7 +61,7 @@ mobileProd = [{
   mobieName: 'iPhone',
   productBrand: 'Apple',
   releaseDate: 'dec 2018',
-  qty: 0,
+  qty: 1,
   price: 85000
 },
 ];
@@ -69,11 +71,17 @@ mobileProd = [{
   ngOnInit() {
   }
 
-  deletelist(delrecord) {
-    const index = this.mobileProd.indexOf(delrecord);
-   // console.log(index);
-    this.mobileProd.splice(index, 1);
-    console.log(this.mobileProd);
-   // this.mobileProd.splice(delrecord, 1);
+  // Decrease the qty if qty >=1 and delete the record if qty < 1
+  deletelist(i) {
+    if (this.mobileProd[i].qty >= 1) {
+      this.mobileProd[i].qty--;
+    }
+    if (this.mobileProd[i].qty < 1) {
+    this.mobileProd.splice(i, 1);
+  }
+  }
+  // Increase the qty
+  increaseQty(i) {
+   this.mobileProd[i].qty++;
   }
 }
